@@ -3,167 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna Kanth Kristam | Portfolio</title>
-    <!-- Modern Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Krishna Kanth Kristam | Software Engineer & Creative Coder</title>
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #6366f1;
             --bg: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --card-bg: #f9fafb;
-            --border: #e5e7eb;
+            --text: #111827;
+            --text-light: #4b5563;
+            --card-bg: #fdfdfd;
+            --border: #eef2f6;
+            --tag-bg: #eff6ff;
+            --tag-text: #1d4ed8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
+
+        h1, h2, h3, .logo { font-family: 'Outfit', sans-serif; }
 
         /* Navigation */
         nav {
             padding: 1.5rem 2rem;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
         }
 
-        .logo { font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+        .logo { 
+            font-weight: 700; 
+            font-size: 1.35rem; 
+            color: var(--text); 
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
 
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-light);
             font-weight: 500;
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            transition: all 0.2s;
         }
 
         .nav-links a:hover { color: var(--primary); }
 
         /* Hero Section */
         header {
-            max-width: 1000px;
-            margin: 4rem auto;
+            max-width: 1100px;
+            margin: 6rem auto 4rem;
             padding: 0 2rem;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.025em; }
+        header h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 1.25rem; 
+            letter-spacing: -0.04em;
+            background: linear-gradient(to right, #111827, #374151);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        .subtitle { font-size: 1.25rem; color: var(--text-light); max-width: 600px; }
+        .hero-desc { 
+            font-size: 1.35rem; 
+            color: var(--text-light); 
+            max-width: 700px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
 
-        /* Project Sections */
-        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        /* Container & Categories */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        .category-header {
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
 
         .category-title {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             color: var(--primary);
             font-weight: 700;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.5rem;
+            white-space: nowrap;
         }
+
+        .category-line { height: 1px; background: var(--border); width: 100%; }
 
         /* Project Grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 16px;
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            background: #ffffff;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border-color: #d1d5db;
         }
 
-        .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .card-title { 
+            font-size: 1.35rem; 
+            font-weight: 700; 
+            margin-bottom: 0.85rem; 
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
 
-        .card-desc { color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .card-desc { 
+            color: var(--text-light); 
+            font-size: 0.95rem; 
+            margin-bottom: 1.75rem;
+            flex-grow: 1;
+        }
 
-        /* Tags */
-        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        /* Tags and Links */
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
 
         .tag {
-            background: #eef2ff;
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.35rem 0.85rem;
+            border-radius: 8px;
             font-size: 0.75rem;
             font-weight: 600;
         }
 
-        /* Buttons */
         .card-links { display: flex; gap: 1rem; }
 
         .btn {
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
+            padding: 0.65rem 1.25rem;
+            border-radius: 10px;
             transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-primary { background: var(--primary); color: white; }
-        .btn-outline { border: 1px solid var(--border); color: var(--text); }
-        .btn:hover { opacity: 0.9; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-outline { border: 1.5px solid var(--border); color: var(--text); }
+        .btn-outline:hover { background: #f9fafb; border-color: #d1d5db; }
 
         /* Footer */
         footer {
-            background: #111827;
+            background: #000000;
             color: white;
-            padding: 4rem 2rem;
-            margin-top: 6rem;
+            padding: 6rem 2rem 4rem;
+            margin-top: 10rem;
         }
 
         .footer-content {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+            gap: 4rem;
         }
 
-        .footer-title { font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; }
+        .footer-logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white; }
 
         .footer-links { list-style: none; }
-
-        .footer-links li { margin-bottom: 0.5rem; }
-
-        .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.875rem; }
-
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { color: #9ca3af; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
         .footer-links a:hover { color: white; }
 
         .copyright {
-            max-width: 1000px;
-            margin: 3rem auto 0;
+            max-width: 1100px;
+            margin: 4rem auto 0;
             padding-top: 2rem;
-            border-top: 1px solid #374151;
-            font-size: 0.875rem;
-            color: #9ca3af;
+            border-top: 1px solid #1f2937;
+            font-size: 0.85rem;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
         }
 
-        @media (max-width: 640px) {
-            h1 { font-size: 2rem; }
-            .nav-links { display: none; } /* Simplified for mobile */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.75rem; }
+            .nav-links { display: none; }
+            .project-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -173,29 +234,69 @@
         <a href="#" class="logo">Krishna Kanth Kristam</a>
         <ul class="nav-links">
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#translations">Translations</a></li>
+            <li><a href="#about">About</a></li>
         </ul>
     </nav>
 
     <header>
         <h1>Projects</h1>
-        <p class="subtitle">A collection of my work in web development, language learning tools, and creative coding.</p>
+        <p class="hero-desc">A collection of my work in web development, language learning tools, and creative coding.</p>
     </header>
 
     <div class="container" id="projects">
         
-        <!-- Category 1 -->
-        <h2 class="category-title">Telugu Language Learning</h2>
+        <!-- Category: Finance & Algos -->
+        <div class="category-header">
+            <span class="category-title">Financial Engineering</span>
+            <div class="category-line"></div>
+        </div>
         <div class="project-grid">
-            
             <div class="card">
-                <h3 class="card-title">Telugu to IAST Converter</h3>
-                <p class="card-desc">A bidirectional transliteration tool that converts between Telugu script and IAST, enabling accurate romanization.</p>
+                <h3 class="card-title">Stock Selection Dashboard</h3>
+                <p class="card-desc">A full-stack momentum-based trading algorithm that ranks the Nifty 500 universe and manages a virtual portfolio with real-time performance tracking.</p>
+                <div class="tags">
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Finance</span>
+                </div>
+                <div class="card-links">
+                    <a href="#" class="btn btn-outline">Private Backend</a>
+                    <a href="#" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Telugu Language Learning -->
+        <div class="category-header">
+            <span class="category-title">Telugu Language Learning</span>
+            <div class="category-line"></div>
+        </div>
+        <div class="project-grid">
+            <div class="card">
+                <h3 class="card-title">Telugu Word Analysis</h3>
+                <p class="card-desc">Advanced linguistic tool featuring syllable-based analysis of 54,000+ Telugu words across 27+ linguistic categories.</p>
                 <div class="tags">
                     <span class="tag">JavaScript</span>
+                    <span class="tag">Chart.js</span>
+                    <span class="tag">Python</span>
+                </div>
+                <div class="card-links">
+                    <a href="#" class="btn btn-primary">Live Demo</a>
+                    <a href="#" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Telugu to IAST Converter</h3>
+                <p class="card-desc">Bidirectional transliteration tool converting between Telugu script and IAST for accurate romanization.</p>
+                <div class="tags">
                     <span class="tag">Unicode</span>
-                    <span class="tag">Linguistics</span>
+                    <span class="tag">Regex</span>
+                    <span class="tag">i18n</span>
                 </div>
                 <div class="card-links">
                     <a href="#" class="btn btn-primary">Live Demo</a>
@@ -205,11 +306,31 @@
 
             <div class="card">
                 <h3 class="card-title">Telugu Wordle</h3>
-                <p class="card-desc">An alternative Telugu implementation featuring a template-based HTML generation system and React CDN.</p>
+                <p class="card-desc">Native Telugu Wordle implementation using a template-based generation system and runtime JSX transpilation.</p>
                 <div class="tags">
                     <span class="tag">React</span>
                     <span class="tag">Babel</span>
-                    <span class="tag">Games</span>
+                    <span class="tag">CDN</span>
+                </div>
+                <div class="card-links">
+                    <a href="#" class="btn btn-primary">Live Demo</a>
+                    <a href="#" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Development Tools & ML -->
+        <div class="category-header">
+            <span class="category-title">Dev Tools & AI</span>
+            <div class="category-line"></div>
+        </div>
+        <div class="project-grid">
+            <div class="card">
+                <h3 class="card-title">NanoBasic Interpreter</h3>
+                <p class="card-desc">Full BASIC interpreter with tokenization, parsing, AST generation, and debugging capabilities.</p>
+                <div class="tags">
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Compilers</span>
                 </div>
                 <div class="card-links">
                     <a href="#" class="btn btn-primary">Live Demo</a>
@@ -217,17 +338,13 @@
                 </div>
             </div>
 
-        </div>
-
-        <!-- Category 2 -->
-        <h2 class="category-title">Development Tools</h2>
-        <div class="project-grid">
             <div class="card">
-                <h3 class="card-title">NanoBasic Interpreter</h3>
-                <p class="card-desc">A full-featured BASIC interpreter implementation with tokenization, parsing, and AST generation.</p>
+                <h3 class="card-title">Digit Recognition</h3>
+                <p class="card-desc">Neural network-based system for handwritten digit recognition with real-time confidence visualization.</p>
                 <div class="tags">
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">Compiler Design</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">Canvas</span>
                 </div>
                 <div class="card-links">
                     <a href="#" class="btn btn-primary">Live Demo</a>
@@ -241,19 +358,20 @@
     <footer>
         <div class="footer-content">
             <div>
-                <div class="footer-title">Krishna Kanth Kristam</div>
-                <p style="color: #9ca3af; font-size: 0.875rem;">Software engineering, language learning, and creative coding.</p>
+                <div class="footer-logo">KK.</div>
+                <p style="color: #9ca3af; font-size: 0.9rem; max-width: 250px;">Software engineering, Telugu language learning, and cultural preservation.</p>
             </div>
             <div>
-                <div class="footer-title">Quick Links</div>
+                <div class="footer-title">Explore</div>
                 <ul class="footer-links">
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#translations">Translations</a></li>
+                    <li><a href="#projects">Projects</a></li>
                 </ul>
             </div>
             <div>
-                <div class="footer-title">Connect</div>
+                <div class="footer-title">Social</div>
                 <ul class="footer-links">
                     <li><a href="#">GitHub</a></li>
                     <li><a href="#">LinkedIn</a></li>
@@ -262,7 +380,8 @@
             </div>
         </div>
         <div class="copyright">
-            © 2025 Krishna Kanth Kristam. All rights reserved.
+            <span>© 2025 Krishna Kanth Kristam. All rights reserved.</span>
+            <span>Built with Inter & Outfit</span>
         </div>
     </footer>
 
